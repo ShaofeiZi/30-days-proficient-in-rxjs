@@ -176,11 +176,11 @@ function findIndex(arr, predicate, start = 0) {
         return findIndex(arr, predicate, start+1);
     }
 }
-findIndex(['a', 'b'], x => x === 'b'); // 找阵列中 'b' 的 index
+findIndex(['a', 'b'], x => x === 'b'); // 找数组中 'b' 的 index
 
 ```
 
-这里我们写了一个 findIndex 用来找阵列中的元素位置，我们在 `findIndex` 中故意多塞了一个参数用来保存当前找到第几个 index 的**状态**，这就是利用参数保存状态！
+这里我们写了一个 findIndex 用来找数组中的元素位置，我们在 `findIndex` 中故意多塞了一个参数用来保存当前找到第几个 index 的**状态**，这就是利用参数保存状态！
 
 > 
 > 
@@ -198,10 +198,10 @@ findIndex(['a', 'b'], x => x === 'b'); // 找阵列中 'b' 的 index
 
 ### 可读性高
 
-当我们透过一系列的函数封装资料的操作过程，程式码能变得非常的简洁且可读性极高，例如下面的例子
+当我们透过一系列的函数封装资料的操作过程，代码能变得非常的简洁且可读性极高，例如下面的例子
 
 ```
-[9, 4].concat([8, 7]) // 合并阵列
+[9, 4].concat([8, 7]) // 合并数组
       .sort()  // 排序
       .filter(x => x > 5) // 过滤出大于 5 的
 
@@ -217,4 +217,4 @@ Functional Programming 易于做并行/平行(Concurrency/Parallel)处理，因�
 
 ## 今日小结
 
-今天讲了 Functional Programming 的基本特性，及其优势。现在愈来愈多的 Library 用到了 FP 的观念，JS 也越来越多 Functional 的函数库，例如：Lodash, Underscore, lazy, Ramda。了解 FP 的基本观念有助于我们在学习其他 Library 更容易上手，也能使我们撰写出更好的程式码，希望各位读者有所收获，若有任何疑问欢迎在下方留言给我！
+今天讲了 Functional Programming 的基本特性，及其优势。现在愈来愈多的 Library 用到了 FP 的观念，JS 也越来越多 Functional 的函数库，例如：Lodash, Underscore, lazy, Ramda。了解 FP 的基本观念有助于我们在学习其他 Library 更容易上手，也能使我们撰写出更好的代码，希望各位读者有所收获，若有任何疑问欢迎在下方留言给我！
