@@ -24,7 +24,7 @@ document.body.addEventListener('click', clickHandler)
 
 ```
 
-在上面的代码，我们先宣告了一个 `clickHandler`函数，再用 DOM 事件 (范例是 body) 的 `addEventListener` 来监听**点击**(click)事件，每次使用者在 body 点击滑鼠就会执行一次 `clickHandler`，并把相关的资讯(event)带进来！这就是观察者模式，我们可以对某件事注册监听，并在事件发生时，自动执行我们注册的观察者(listener)。
+在上面的代码，我们先建立了一个 `clickHandler`函数，再用 DOM 事件 (范例是 body) 的 `addEventListener` 来监听**点击**(click)事件，每次使用者在 body 点击滑鼠就会执行一次 `clickHandler`，并把相关的资讯(event)带进来！这就是观察者模式，我们可以对某件事注册监听，并在事件发生时，自动执行我们注册的观察者(listener)。
 
 Observer 的观念其实就这么的简单，但笔者希望能透过代码带大家了解，如何实例这样的 Pattern！
 
