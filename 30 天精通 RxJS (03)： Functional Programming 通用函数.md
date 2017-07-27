@@ -1,15 +1,15 @@
-# 30 天精通 RxJS (03)： Functional Programming 通用函式
+# 30 天精通 RxJS (03)： Functional Programming 通用函数
 
 > 
 > 
-> 了解 Functional Programming 的通用函式，能让我们写出更简洁的代码，也能帮助我们学习 RxJS。
+> 了解 Functional Programming 的通用函数，能让我们写出更简洁的代码，也能帮助我们学习 RxJS。
 > 
 > 
 
 这是【30天精通 RxJS】的 03 篇，如果还没看过 02 篇可以往这边走：
 [30 天精通 RxJS (02)： Functional Programming 基本观念](https://github.com/ShaofeiZi/30-days-proficient-in-rxjs/blob/master/30%20%E5%A4%A9%E7%B2%BE%E9%80%9A%20RxJS%20(02)%EF%BC%9A%20Functional%20Programming%20%E5%9F%BA%E6%9C%AC%E8%A7%82%E5%BF%B5.md)
 
-读者可能会很好奇，我们的主题是 RxJS 为什么要特别讲 Functional Programming 的通用函式呢？ 实际上，RxJS 核心的 Observable 操作观念跟 FP 的数组操作是极为相近的，只学会以下几个基本的方法跟观念后，会让我们之后上手 Observable 简单很多！
+读者可能会很好奇，我们的主题是 RxJS 为什么要特别讲 Functional Programming 的通用函数呢？ 实际上，RxJS 核心的 Observable 操作观念跟 FP 的数组操作是极为相近的，只学会以下几个基本的方法跟观念后，会让我们之后上手 Observable 简单很多！
 
 今天的代码比较多，大家可以直接看视频！
 
@@ -41,7 +41,7 @@ arr.forEach(item => console.log(item));
 
 ```
 
-forEach 是 FP 操作数组的基本方法，我们可以用这个方法来实作下面三个我们今天要讲的重点分别为 map, filter, concatAll。
+forEach 是 FP 操作数组的基本方法，我们可以用这个方法来实例下面三个我们今天要讲的重点分别为 map, filter, concatAll。
 
 ## Map
 
@@ -122,7 +122,7 @@ Array.prototype.map = function(callback) {
 > 
 > 
 
-到这里我们就实作完成 map 的方法了，让我们来试试这个方法吧！
+到这里我们就实例完成 map 的方法了，让我们来试试这个方法吧！
 
 ```
 var idAndTitle = newCourseList
@@ -243,7 +243,7 @@ user.courseLists.forEach(list => {
 
 ```
 
-可以看到上面的代码，我们用了较为低阶的操作来解决这个问题，我们刚刚已经试着用抽象化的方式实作了 map 跟 filter，那我们同样也能够定义一个方法用来 摊平二维数组。
+可以看到上面的代码，我们用了较为低阶的操作来解决这个问题，我们刚刚已经试着用抽象化的方式实例了 map 跟 filter，那我们同样也能够定义一个方法用来 摊平二维数组。
 
 让我们来加入一个 concatAll 方法来简化这段代码吧！
 concatAll 要做的事情很简单，就是把一个二维数组转成一维。
@@ -421,4 +421,4 @@ result 结果为 [
 
 ## 今日小结
 
-今天讲了 FP 操作数组的三个通用函式 forEach, map, filter，以及我们自己定义的一个方法叫 concatAll。这几天我们把学习 RxJS 的前置观念跟知识基本上都讲完了，明天我们就开始进入 RxJS 的重点核心 Observable 喽！
+今天讲了 FP 操作数组的三个通用函数 forEach, map, filter，以及我们自己定义的一个方法叫 concatAll。这几天我们把学习 RxJS 的前置观念跟知识基本上都讲完了，明天我们就开始进入 RxJS 的重点核心 Observable 喽！

@@ -148,7 +148,7 @@ Functional Programming 强调没有 Side Effect，也就是 function 要保持�
 *   发送 http request
 *   在画面印出值或是 log
 *   获得使用者 input
-*   Query DOM 物件
+*   Query DOM 事件
 
 **Referential transparency**
 

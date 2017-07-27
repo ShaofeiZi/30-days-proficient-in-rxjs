@@ -194,7 +194,7 @@ Reactive Programming 简单来说就是 **当变数或资源发生变动时，�
 *   当发生变动 => 非同步：不知道什么时候会发生变动，反正变动时要跟我说
 *   由变数自动告知我 => 我不用写通知我的每一步代码
 
-由于最近很红的 Vue.js 底层就是用 Reactive Programming 的概念实作，让我能很好的举例，让大家理解什么是 Reactive Programming！
+由于最近很红的 Vue.js 底层就是用 Reactive Programming 的概念实例，让我能很好的举例，让大家理解什么是 Reactive Programming！
 
 当我们在使用 vue 开发时，只要一有绑定的变数发生改变，相关的变数及画面也会跟着变动，而开发者不需要写这其中如何**通知**发生变化的每一步代码，只需要**专注在发生变化时要做什么事**，这就是典型的 Reactive Programming (记得必须是由变数或资源主动告知！)
 
