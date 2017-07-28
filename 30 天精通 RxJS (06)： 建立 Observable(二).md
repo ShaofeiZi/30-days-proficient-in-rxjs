@@ -182,7 +182,7 @@ source.subscribe({
 
 [JSBin](https://jsbin.com/gefisiy/3/edit?js,console) | [JSFiddle](https://jsfiddle.net/s6323859/d95a8peo/5/)
 
-如果我们传入 Promise 物件实例，当正常回传时，就会被送到 next，并立即送出完成通知，如果有错误则会送到 error。
+如果我们传入 Promise 物件实例，当正常回传时，就会被送到 next，并立即发送完成通知，如果有错误则会送到 error。
 
 > 
 > 
@@ -327,7 +327,7 @@ source.subscribe({
 
 [JSBin](https://jsbin.com/xerori/7/edit?js,console) | [JSFiddle](https://jsfiddle.net/s6323859/e7u6k1b5/5/)
 
-`empty` 会给我们一个**空**的 observable，如果我们订阅这个 observable 会发生什么事呢？ 它会立即送出 complete 的讯息！
+`empty` 会给我们一个**空**的 observable，如果我们订阅这个 observable 会发生什么事呢？ 它会立即发送 complete 的讯息！
 
 > 
 > 
@@ -428,7 +428,7 @@ source.subscribe({
 
 [JSBin](https://jsbin.com/xerori/11/edit?js,console) | [JSFiddle](https://jsfiddle.net/s6323859/e7u6k1b5/9/)
 
-上面这段代码，会每隔一秒送出一个从零开始递增的整数，在 Observable 的世界也有一个 operator 可以更方便地做到这件事，就是 `interval`
+上面这段代码，会每隔一秒发送一个从零开始递增的整数，在 Observable 的世界也有一个 operator 可以更方便地做到这件事，就是 `interval`
 
 ```
 var source = Rx.Observable.interval(1000);
@@ -453,7 +453,7 @@ source.subscribe({
 
 [JSBin](https://jsbin.com/xerori/12/edit?js,console) | [JSFiddle](https://jsfiddle.net/s6323859/e7u6k1b5/10/)
 
-`interval` 有一个参数必须是数值(Number)，这的数值代表发出讯号的间隔时间(ms)。这两段代码基本上是等价的，会持续每隔一秒送出一个从零开始递增的数值！
+`interval` 有一个参数必须是数值(Number)，这的数值代表发出讯号的间隔时间(ms)。这两段代码基本上是等价的，会持续每隔一秒发送一个从零开始递增的数值！
 
 另外有一个很相似的 operator 叫 `timer`， `timer` 可以给两个参数，范例如下
 
@@ -479,7 +479,7 @@ source.subscribe({
 
 [JSBin](https://jsbin.com/xerori/13/edit?js,console) | [JSFiddle](https://jsfiddle.net/s6323859/e7u6k1b5/11/)
 
-当 `timer` 有两个参数时，第一个参数代表要发出第一个值的等待时间(ms)，第二个参数代表第一次之后发送值的间隔时间，所以上面这段代码会先等一秒送出 1 之后每五秒送出 2, 3, 4, 5...。
+当 `timer` 有两个参数时，第一个参数代表要发出第一个值的等待时间(ms)，第二个参数代表第一次之后发送值的间隔时间，所以上面这段代码会先等一秒发送 1 之后每五秒发送 2, 3, 4, 5...。
 
 `timer` 第一个参数除了可以是数值(Number)之外，也可以是日期(Date)，就会等到指定的时间在发送第一个值。
 
@@ -506,7 +506,7 @@ source.subscribe({
 
 [JSBin](https://jsbin.com/xerori/14/edit?js,console) | [JSFiddle](https://jsfiddle.net/s6323859/e7u6k1b5/12/)
 
-上面这段代码就会等一秒后送出 1 同时通知结束。
+上面这段代码就会等一秒后发送 1 同时通知结束。
 
 ## Subscription
 

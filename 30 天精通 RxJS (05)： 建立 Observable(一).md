@@ -66,7 +66,7 @@ var observable = Rx.Observable
 > 
 > 
 
-我们可以订阅这个 observable，来接收他送出的值，代码如下
+我们可以订阅这个 observable，来接收他发送的值，代码如下
 
 ```
 var observable = Rx.Observable
@@ -84,7 +84,7 @@ observable.subscribe(function(value) {
 
 [JSBin](https://jsbin.com/vetoti/1/edit?js,console,output) | [JSFiddle](https://jsfiddle.net/s6323859/yL8n4v53/)
 
-当我们订阅这个 observable，他就会依序送出 `'Jerry'` `'Anna'` 两个字串。
+当我们订阅这个 observable，他就会依序发送 `'Jerry'` `'Anna'` 两个字串。
 
 > 
 > 
@@ -183,7 +183,7 @@ Observable 可以被订阅(subscribe)，或说可以被观察，而订阅 Observ
 
 观察者的三个方法(method)：
 
-*   next：每当 Observable 发送出新的值，next 方法就会被呼叫。
+*   next：每当 Observable 发发送新的值，next 方法就会被呼叫。
 
 *   complete：在 Observable 没有其他的资料可以取得时，complete 方法就会被呼叫，在 complete 被呼叫之后，next 方法就不会再起作用。
 
@@ -231,7 +231,7 @@ complete
 
 上面的范例可以看得出来在 complete 执行后，next 就会自动失效，所以没有印出 `not work`。
 
-下面则是送出错误的范例
+下面则是发送错误的范例
 
 ```
 var observable = Rx.Observable

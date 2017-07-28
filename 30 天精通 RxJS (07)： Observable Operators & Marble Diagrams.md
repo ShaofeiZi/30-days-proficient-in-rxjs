@@ -125,7 +125,7 @@ helloPeople.subscribe(console.log);
 
 ```
 
-在这个时间序当中，我们可能会发送出值(value)，如果值是数字则直接用阿拉伯数字取代，其他的资料型别则用相近的英文符号代表，这里我们用 `interval` 举例
+在这个时间序当中，我们可能会发发送值(value)，如果值是数字则直接用阿拉伯数字取代，其他的资料型别则用相近的英文符号代表，这里我们用 `interval` 举例
 
 ```
 var source = Rx.Observable.interval(1000);
@@ -188,7 +188,7 @@ newest: -----1-----2-----3-----4--...
 
 ### map
 
-Observable 的 map 方法使用上跟阵列的 map 是一样的，我们传入一个 callback function，这个 callback function 会带入每次发送出来的元素，然后我们回传新的元素，如下
+Observable 的 map 方法使用上跟阵列的 map 是一样的，我们传入一个 callback function，这个 callback function 会带入每次发发送来的元素，然后我们回传新的元素，如下
 
 ```
 var source = Rx.Observable.interval(1000);
@@ -241,7 +241,7 @@ newest: -----2-----2-----2-----2--...
 
 ### filter
 
-filter 在使用上也跟阵列的相同，我们要传入一个 callback function，这个 function 会传入每个被送出的元素，并且回传一个 boolean 值，如果为 true 的话就会保留，如果为 false 就会被滤掉，如下
+filter 在使用上也跟阵列的相同，我们要传入一个 callback function，这个 function 会传入每个被发送的元素，并且回传一个 boolean 值，如果为 true 的话就会保留，如果为 false 就会被滤掉，如下
 
 ```
 var source = Rx.Observable.interval(1000);

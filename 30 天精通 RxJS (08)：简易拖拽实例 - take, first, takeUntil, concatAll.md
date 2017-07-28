@@ -50,7 +50,7 @@ example: -----0-----1-----2|
 
 ### first
 
-first 会取 observable 送出的第 1 个元素之后就直接结束，行为跟 take(1) 一致。
+first 会取 observable 发送的第 1 个元素之后就直接结束，行为跟 take(1) 一致。
 
 ```
 var source = Rx.Observable.interval(1000);
@@ -80,7 +80,7 @@ example: -----0|
 
 ### takeUntil
 
-在实务上 takeUntil 很常使用到，他可以在某件事情发生时，让一个 observable 送出 完成(complete)讯息，范例如下
+在实务上 takeUntil 很常使用到，他可以在某件事情发生时，让一个 observable 发送 完成(complete)讯息，范例如下
 
 ```
 var source = Rx.Observable.interval(1000);
@@ -102,9 +102,9 @@ example.subscribe({
 
 [JSBin](https://jsbin.com/jogesut/2/edit?js,console,output) | [JSFiddle](https://jsfiddle.net/s6323859/ckyjuuva/)
 
-这里我们一开始先用 `interval` 建立一个 observable，这个 observable 每隔 1 秒会送出一个从 0 开始递增的数值，接着我们用 `takeUntil`，传入另一个 observable。
+这里我们一开始先用 `interval` 建立一个 observable，这个 observable 每隔 1 秒会发送一个从 0 开始递增的数值，接着我们用 `takeUntil`，传入另一个 observable。
 
-当 `takeUntil` 传入的 observable 发送值时，原本的 observable 就会直接进入完成(complete)的状态，并且发送完成讯息。也就是说上面这段程式码的行为，会先每 1 秒印出一个数字(从 0 递增)直到我们点击 body 为止，他才会送出 complete 讯息。
+当 `takeUntil` 传入的 observable 发送值时，原本的 observable 就会直接进入完成(complete)的状态，并且发送完成讯息。也就是说上面这段代码的行为，会先每 1 秒印出一个数字(从 0 递增)直到我们点击 body 为止，他才会发送 complete 讯息。
 
 如果画成 Marble Diagram 则会像下面这样
 
@@ -120,7 +120,7 @@ example: -----0-----1-----2----|
 
 ### concatAll
 
-有时我们的 Observable 送出的元素又是一个 observable，就像是二维阵列，阵列里面的元素是阵列，这时我们就可以用 `concatAll` 把它摊平成一维阵列，大家也可以直接把 concatAll 想成把所有元素 concat 起来。
+有时我们的 Observable 发送的元素又是一个 observable，就像是二维阵列，阵列里面的元素是阵列，这时我们就可以用 `concatAll` 把它摊平成一维阵列，大家也可以直接把 concatAll 想成把所有元素 concat 起来。
 
 ```
 var click = Rx.Observable.fromEvent(document.body, 'click');
@@ -137,7 +137,7 @@ example.subscribe({
 
 [JSBin](https://jsbin.com/jogesut/6/edit?js,console,output) | [JSFiddle](https://jsfiddle.net/s6323859/ckyjuuva/4/)
 
-这个范例我们每点击一次 body 就会立刻送出 1,2,3，如果用 Marble diagram 表示则如下
+这个范例我们每点击一次 body 就会立刻发送 1,2,3，如果用 Marble diagram 表示则如下
 
 ```
 click  : ------c------------c--------
@@ -186,7 +186,7 @@ example.subscribe({
 
 [JSBin](https://jsbin.com/jogesut/4/edit?js,console) | [JSFiddle](https://jsfiddle.net/s6323859/ckyjuuva/2/)
 
-这里可以看到 `source` 会送出 3 个 observable，但是 `concatAll` 后的行为永远都是先处理第一个 observable，**等到当前处理的结束后才会再处理下一个**。
+这里可以看到 `source` 会发送 3 个 observable，但是 `concatAll` 后的行为永远都是先处理第一个 observable，**等到当前处理的结束后才会再处理下一个**。
 
 用 Marble diagram 表示如下
 
@@ -304,7 +304,7 @@ source
 
 ```
 
-到这里我们就已经完成了简易的拖拽功能了!完整的程式码如下
+到这里我们就已经完成了简易的拖拽功能了!完整的代码如下
 
 ```
 const dragDOM = document.getElementById('drag');
@@ -325,9 +325,9 @@ mouseDown
 
 ```
 
-不知道读者有没有感受到，我们整个程式码不到 15 行，而且只要能够看懂各个 operators，我们程式可读性是非常的高。
+不知道读者有没有感受到，我们整个代码不到 15 行，而且只要能够看懂各个 operators，我们程式可读性是非常的高。
 
-虽然这只是一个简单的拖拽实现，但已经展示出 RxJS 带来的威力，它让我们的程式码更加的简洁，也更好的维护！
+虽然这只是一个简单的拖拽实现，但已经展示出 RxJS 带来的威力，它让我们的代码更加的简洁，也更好的维护！
 
 > 
 > 
