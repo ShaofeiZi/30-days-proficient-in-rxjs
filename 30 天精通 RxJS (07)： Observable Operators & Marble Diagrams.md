@@ -78,7 +78,7 @@ helloPeople.subscribe(console.log);
 
 > 
 > 
-> 在 RxJS 5 的实作中，其实每个 operator 是透过原来 observable 的 lift 方法来建立新的 observable，这个方法会在新回传的 observable 物件内偷塞两个属性，分别是 source（来源） 与 operator，记录原本的资料源跟当前使用的 operator。
+> 在 RxJS 5 的实例中，其实每个 operator 是透过原来 observable 的 lift 方法来建立新的 observable，这个方法会在新回传的 observable 物件内偷塞两个属性，分别是 source（来源） 与 operator，记录原本的资料源跟当前使用的 operator。
 > 
 > 
 
@@ -90,7 +90,7 @@ helloPeople.subscribe(console.log);
 
 > 
 > 
-> 这里我们只是简单的实作 operator。如果之后实例上，想要不影响原本的 Observable 又能够自订 operator 可以参考官方的这份[文件](https://github.com/ReactiveX/rxjs/blob/master/doc/operator-creation.md)。(现在先不用看)
+> 这里我们只是简单的实例 operator。如果之后实例上，想要不影响原本的 Observable 又能够自订 operator 可以参考官方的这份[文件](https://github.com/ReactiveX/rxjs/blob/master/doc/operator-creation.md)。(现在先不用看)
 > 
 > 
 

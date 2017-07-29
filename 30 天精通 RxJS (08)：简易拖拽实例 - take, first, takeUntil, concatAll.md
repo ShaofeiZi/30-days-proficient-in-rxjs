@@ -11,7 +11,7 @@
 
 今天建议大家直接看[影片](https://www.youtube.com/watch?v=bgi3Uaab1ok )
 
-我们今天要接着讲 take, first, takeUntil, concatAll 这四个 operators，并且实作一个简易的拖拽功能。
+我们今天要接着讲 take, first, takeUntil, concatAll 这四个 operators，并且实例一个简易的拖拽功能。
 
 ## Operators
 

@@ -1,7 +1,7 @@
 # 30 天精通 RxJS (09)： Observable Operator - skip, takeLast, last, concat, startWith, merge
 
 这是【30天精通 RxJS】的 09 篇，如果还没看过 08 篇可以往这边走：
-[30 天精通 RxJS (08)：简易拖拉实作 - take, first, takeUntil, concatAll](https://github.com/ShaofeiZi/30-days-proficient-in-rxjs/blob/master/30%20%E5%A4%A9%E7%B2%BE%E9%80%9A%20RxJS%20(08)%EF%BC%9A%E7%AE%80%E6%98%93%E6%8B%96%E6%8B%BD%E5%AE%9E%E4%BE%8B%20-%20take%2C%20first%2C%20takeUntil%2C%20concatAll.md)
+[30 天精通 RxJS (08)：简易拖拽实例 - take, first, takeUntil, concatAll](https://github.com/ShaofeiZi/30-days-proficient-in-rxjs/blob/master/30%20%E5%A4%A9%E7%B2%BE%E9%80%9A%20RxJS%20(08)%EF%BC%9A%E7%AE%80%E6%98%93%E6%8B%96%E6%8B%BD%E5%AE%9E%E4%BE%8B%20-%20take%2C%20first%2C%20takeUntil%2C%20concatAll.md)
 
 今天是美好的圣诞节，先祝读者们圣诞快乐！
 为了让大家在圣诞节好好的陪家人，所以今天的文章内容就轻松点，让我们简单介绍几个的 operators 就好了。
