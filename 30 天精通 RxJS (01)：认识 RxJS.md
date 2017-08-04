@@ -79,7 +79,7 @@ Rx.Observable
 [JSbin](https://jsbin.com/vofaluv/4/edit?console,output) | [JSFiddle](https://jsfiddle.net/s6323859/d95a8peo/1/)
 (点击画面后会在 console 显示，记得打开 console 来看)
 
-大致上能看得出来我们在使用 RxJS 后，不管是针对 DOM Event 还是上面列的各种 API 我们都可以透过 RxJS 的 API 来做资料操作，像是范例中用 `take(n)` 来设定只取一次，之后就释放内存。
+大致上能看得出来我们在使用 RxJS 后，不管是针对 DOM Event 还是上面列的各种 API 我们都可以透过 RxJS 的 API 来做资料操作，像是示例中用 `take(n)` 来设定只取一次，之后就释放内存。
 
 说了这么多，其实就是简单一句话
 

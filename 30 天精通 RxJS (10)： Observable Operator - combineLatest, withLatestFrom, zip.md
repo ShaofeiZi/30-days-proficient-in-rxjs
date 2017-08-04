@@ -14,7 +14,7 @@
 
 ### combineLatest
 
-首先我们要介绍的是 combineLatest，它会取得各个 observable 最后送出的值，再输出成一个值，我们直接看范例会比较好解释。
+首先我们要介绍的是 combineLatest，它会取得各个 observable 最后送出的值，再输出成一个值，我们直接看示例会比较好解释。
 
 ``` javascript
 var source = Rx.Observable.interval(500).take(3);
@@ -53,7 +53,7 @@ example: ----01--23-4--(56)--7|
 
 ```
 
-首先 `combineLatest` 可以接收多个 observable，最后一个参数是 callback function，这个 callback function 接收的参数数量跟合并的 observable 数量相同，依照范例来说，因为我们这里合并了两个 observable 所以后面的 callback function 就接收 x, y 两个参数，x 会接收从 source 发送出来的值，y 会接收从 newest 发送出来的值。
+首先 `combineLatest` 可以接收多个 observable，最后一个参数是 callback function，这个 callback function 接收的参数数量跟合并的 observable 数量相同，依照示例来说，因为我们这里合并了两个 observable 所以后面的 callback function 就接收 x, y 两个参数，x 会接收从 source 发送出来的值，y 会接收从 newest 发送出来的值。
 
 最后一个重点就是一定会等两个 observable 都**曾有送值**出来才会呼叫我们传入的 callback，所以这段程式是这样运行的
 
@@ -75,7 +75,7 @@ combineLatest 很常用在运算多个因子的结果，例如最常见的 BMI �
 
 ### zip
 
-在讲 withLatestFrom 之前，先让我们先来看一下 zip 是怎么运作的，zip 会取每个 observable 相同顺位的元素并传入 callback，也就是说每个 observable 的第 n 个元素会一起被传入 callback，这里我们同样直接用范例讲解会比较清楚
+在讲 withLatestFrom 之前，先让我们先来看一下 zip 是怎么运作的，zip 会取每个 observable 相同顺位的元素并传入 callback，也就是说每个 observable 的第 n 个元素会一起被传入 callback，这里我们同样直接用示例讲解会比较清楚
 
 ```javascript
 var source = Rx.Observable.interval(500).take(3);
@@ -107,7 +107,7 @@ example: ----0----2----4|
 
 ```
 
-以我们的范例来说，zip 会等到 source 跟 newest **都送出了第一个元素**，再传入 callback，下次则等到 source 跟 newest **都送出了第二个元素**再一起传入 callback，所以运行的步骤如下：
+以我们的示例来说，zip 会等到 source 跟 newest **都送出了第一个元素**，再传入 callback，下次则等到 source 跟 newest **都送出了第二个元素**再一起传入 callback，所以运行的步骤如下：
 
 *   newest 送出了**第一个**值 `0`，但此时 source 并没有送出**第一个**值，所以不会执行 callback。
 *   source 送出了**第一个**值 `0`，newest 之前送出的**第一个**值为 `0`，把这两个数传入 callback 得到 `0`。

@@ -455,7 +455,7 @@ source.subscribe({
 
 `interval` 有一个参数必须是数值(Number)，这的数值代表发出讯号的间隔时间(ms)。这两段代码基本上是等价的，会持续每隔一秒发送一个从零开始递增的数值！
 
-另外有一个很相似的 operator 叫 `timer`， `timer` 可以给两个参数，范例如下
+另外有一个很相似的 operator 叫 `timer`， `timer` 可以给两个参数，示例如下
 
 ```
 var source = Rx.Observable.timer(1000, 5000);
@@ -512,7 +512,7 @@ source.subscribe({
 
 今天我们讲到很多 无穷的 observable，例如 interval, never。但有时我们可能会在某些行为后不需要这些资源，要做到这件事最简单的方式就是 `unsubscribe`。
 
-其实在订阅 observable 后，会回传一个 subscription 物件，这个物件具有释放资源的`unsubscribe` 方法，范例如下
+其实在订阅 observable 后，会回传一个 subscription 物件，这个物件具有释放资源的`unsubscribe` 方法，示例如下
 
 ```
 var source = Rx.Observable.timer(1000, 1000);
@@ -553,4 +553,4 @@ setTimeout(() => {
 
 ## 今日小结
 
-今天我们把建立 Observable 实例的方法几乎都讲完了，建立 Observable 是 RxJS 的基础，接下来我们会讲转换(Transformation)、过滤(Filter)、合并(Combination)等 Operators，但不会像今天这样一次把一整个类型的 operator 讲完，笔者会依照实用程度以及范例搭配穿插著讲各种 operator!
+今天我们把建立 Observable 实例的方法几乎都讲完了，建立 Observable 是 RxJS 的基础，接下来我们会讲转换(Transformation)、过滤(Filter)、合并(Combination)等 Operators，但不会像今天这样一次把一整个类型的 operator 讲完，笔者会依照实用程度以及示例搭配穿插著讲各种 operator!

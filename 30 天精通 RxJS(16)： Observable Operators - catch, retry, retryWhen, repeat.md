@@ -8,7 +8,7 @@
 
 ### catch
 
-catch 是很常见的非同步错误处理方法，在 RxJS 中也能够直接用 catch 来处理错误，在 RxJS 中的 catch 可以回传一个 observable 来送出新的值，让我们直接来看范例：
+catch 是很常见的非同步错误处理方法，在 RxJS 中也能够直接用 catch 来处理错误，在 RxJS 中的 catch 可以回传一个 observable 来送出新的值，让我们直接来看示例：
 
 ```javascript
 var source = Rx.Observable.from(['a','b','c','d',2])
@@ -28,7 +28,7 @@ example.subscribe({
 
 [JSBin](https://jsbin.com/nafusoq/16/edit?js,console) | [JSFiddle](https://jsfiddle.net/aruku1xr/10/)
 
-这个范例我们每隔 500 毫秒会送出一个字串(String)，并用字串的方法 `toUpperCase()` 来把字串的英文字母改成大写，过程中可能未知的原因送出了一个数值(Number) `2` 导致发生例外(数值没有 toUpperCase 的方法)，这时我们在后面接的 catch 就能抓到错误。
+这个示例我们每隔 500 毫秒会送出一个字串(String)，并用字串的方法 `toUpperCase()` 来把字串的英文字母改成大写，过程中可能未知的原因送出了一个数值(Number) `2` 导致发生例外(数值没有 toUpperCase 的方法)，这时我们在后面接的 catch 就能抓到错误。
 
 catch 可以回传一个新的 Observable、Promise、Array 或任何 Iterable 的物件，来传送之后的元素。
 
@@ -67,7 +67,7 @@ example.subscribe({
 
 回传一个 empty 的 observable 来直接结束(complete)。
 
-另外 catch 的 callback 能接收第二个参数，这个参数会接收当前的 observalbe，我们可以回传当前的 observable 来做到重新执行，范例如下
+另外 catch 的 callback 能接收第二个参数，这个参数会接收当前的 observalbe，我们可以回传当前的 observable 来做到重新执行，示例如下
 
 ```javascript
 var source = Rx.Observable.from(['a','b','c','d',2])
@@ -192,7 +192,7 @@ example.subscribe({
 
 这里 retryWhen 我们传入一个 callback，这个 callback 有一个参数会传入一个 observable，这个 observable 不是原本的 observable(example) 而是例外事件送出的错误所组成的一个 observable，我们可以对这个由错误所组成的 observable 做操作，等到这次的处理完成后就会重新订阅我们原本的 observable。
 
-这个范例我们是把错误的 observable 送出错误延迟 1 秒，这会使后面重新订阅的动作延迟 1 秒才执行，画成 Marble Diagram 如下
+这个示例我们是把错误的 observable 送出错误延迟 1 秒，这会使后面重新订阅的动作延迟 1 秒才执行，画成 Marble Diagram 如下
 
 ```
 source : ----a----b----c----d----2|
@@ -232,7 +232,7 @@ example.subscribe({
 
 ### repeat
 
-我们有时候可能会想要 retry 一直重复订阅的效果，但没有错误发生，这时就可以用 repeat 来做到这件事，范例如下
+我们有时候可能会想要 retry 一直重复订阅的效果，但没有错误发生，这时就可以用 repeat 来做到这件事，示例如下
 
 ```javascript
 var source = Rx.Observable.from(['a','b','c'])
@@ -313,7 +313,7 @@ example.subscribe({
 
 [JSBin](https://jsbin.com/nafusoq/6/edit?js,output) | [JSFiddle](https://jsfiddle.net/aruku1xr/)
 
-这个范例其实就是模仿在即时同步断线时，利用 catch 返回一个新的 observable，这个 observable 会先送出错误讯息并且把原本的 observable 延迟 5 秒再做合并，虽然这只是一个模仿，但它清楚的展示了 RxJS 在做错误处理时的灵活性。
+这个示例其实就是模仿在即时同步断线时，利用 catch 返回一个新的 observable，这个 observable 会先送出错误讯息并且把原本的 observable 延迟 5 秒再做合并，虽然这只是一个模仿，但它清楚的展示了 RxJS 在做错误处理时的灵活性。
 
 ### 今日小结
 

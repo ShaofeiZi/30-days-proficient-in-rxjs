@@ -6,7 +6,7 @@
 
 ### debounce
 
-跟 buffer、bufferTime 一样，Rx 有 debounce 跟 debounceTime 一个是传入 observable 另一个则是传入毫秒，比较常用到的是 debounceTime，这里我们直接来看一个范例
+跟 buffer、bufferTime 一样，Rx 有 debounce 跟 debounceTime 一个是传入 observable 另一个则是传入毫秒，比较常用到的是 debounceTime，这里我们直接来看一个示例
 
 ```javascript
 var source = Rx.Observable.interval(300).take(5);
@@ -26,7 +26,7 @@ example.subscribe({
 
 这里只印出 `4` 然后就结束了，因为 **debounce 运作的方式是每次收到元素，他会先把元素 cache 住并等待一段时间，如果这段时间内已经没有收到任何元素，则把元素送出；如果这段时间内又收到新的元素，则会把原本 cache 住的元素释放掉并重新计时，不断反复。**
 
-以现在这个范例来讲，我们每 300 毫秒就会送出一个数值，但我们的 debounceTime 是 1000 毫秒，也就是说每次 debounce 收到元素还等不到 1000 毫秒，就会收到下一个新元素，然后重新等待 1000 毫秒，如此重复直到第五个元素送出时，observable 结束(complete)了，debounce 就直接送出元素。
+以现在这个示例来讲，我们每 300 毫秒就会送出一个数值，但我们的 debounceTime 是 1000 毫秒，也就是说每次 debounce 收到元素还等不到 1000 毫秒，就会收到下一个新元素，然后重新等待 1000 毫秒，如此重复直到第五个元素送出时，observable 结束(complete)了，debounce 就直接送出元素。
 
 以 Marble Diagram 表示如下
 
@@ -78,7 +78,7 @@ Rx.Observable.fromEvent(searchInput, 'input')
 
 基本上每次看到 debounce 就会看到 throttle，他们两个的作用都是要降低事件的触发频率，但行为上有很大的不同。
 
-跟 debounce 一样 RxJS 有 throttle 跟 throttleTime 两个方法，一个是传入 observable 另一个是传入毫秒，比较常用到的也是 throttleTime，让我们直接来看范例
+跟 debounce 一样 RxJS 有 throttle 跟 throttleTime 两个方法，一个是传入 observable 另一个是传入毫秒，比较常用到的也是 throttleTime，让我们直接来看示例
 
 ```javascript
 var source = Rx.Observable.interval(300).take(5);

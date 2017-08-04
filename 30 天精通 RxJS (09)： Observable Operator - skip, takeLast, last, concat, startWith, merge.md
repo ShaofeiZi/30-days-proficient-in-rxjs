@@ -10,7 +10,7 @@
 
 ### skip
 
-我们昨天介绍了 `take` 可以取前几个发送的元素，今天介绍可以略过前几个发送元素的 operator: `skip`，范例如下：
+我们昨天介绍了 `take` 可以取前几个发送的元素，今天介绍可以略过前几个发送元素的 operator: `skip`，示例如下：
 
 ```
 var source = Rx.Observable.interval(1000);
@@ -29,7 +29,7 @@ example.subscribe({
 
 [JSBin](https://jsbin.com/rucopex/1/edit?js,console) | [JSFiddle](https://jsfiddle.net/s6323859/tucvcrmh/)
 
-原本从 0 开始的就会变成从 3 开始，但是记得原本元素的等待时间仍然存在，也就是说此范例第一个取得的元素需要等 4 秒，用 Marble Diagram 表示如下。
+原本从 0 开始的就会变成从 3 开始，但是记得原本元素的等待时间仍然存在，也就是说此示例第一个取得的元素需要等 4 秒，用 Marble Diagram 表示如下。
 
 ```
 source : ----0----1----2----3----4----5--....
@@ -40,7 +40,7 @@ example: -------------------3----4----5--...
 
 ### takeLast
 
-除了可以用 take 取前几个之外，我们也可以倒过来取最后几个，范例如下：
+除了可以用 take 取前几个之外，我们也可以倒过来取最后几个，示例如下：
 
 ```
 var source = Rx.Observable.interval(1000).take(6);
@@ -97,7 +97,7 @@ example: ------------------------------(5)|
 
 ### concat
 
-`concat` 可以把多个 observable 实例合并成一个，范例如下
+`concat` 可以把多个 observable 实例合并成一个，示例如下
 
 ```
 var source = Rx.Observable.interval(1000).take(3);
@@ -154,7 +154,7 @@ example.subscribe({
 
 ### startWith
 
-`startWith` 可以在 observable 的一开始塞要发送的元素，有点像 `concat` 但参数不是 observable 而是要发送的元素，使用范例如下
+`startWith` 可以在 observable 的一开始塞要发送的元素，有点像 `concat` 但参数不是 observable 而是要发送的元素，使用示例如下
 
 ```
 var source = Rx.Observable.interval(1000);
@@ -257,6 +257,6 @@ stopVideo.subscribe(() => {
 
 ## 今日小结
 
-今天介绍的六个 operators 都是平时很容易用到的，我们之后的范例也有机会再遇到。希望读者们能自己试试这些方法，之后使用时会比较有印象！
+今天介绍的六个 operators 都是平时很容易用到的，我们之后的示例也有机会再遇到。希望读者们能自己试试这些方法，之后使用时会比较有印象！
 
 不知道读者今天有没有收获呢？ 如果有任何问题，欢迎在下方留言给我，谢谢。

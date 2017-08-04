@@ -229,9 +229,9 @@ complete
 
 ```
 
-上面的范例可以看得出来在 complete 执行后，next 就会自动失效，所以没有印出 `not work`。
+上面的示例可以看得出来在 complete 执行后，next 就会自动失效，所以没有印出 `not work`。
 
-下面则是发送错误的范例
+下面则是发送错误的示例
 
 ```
 var observable = Rx.Observable

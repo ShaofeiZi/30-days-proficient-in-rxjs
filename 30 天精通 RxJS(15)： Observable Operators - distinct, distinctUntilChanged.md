@@ -8,7 +8,7 @@
 
 ### distinct
 
-如果会下 SQL 指令的应该都对 distinct 不陌生，它能帮我们把相同值的资料滤掉只留一笔，RxJS 里的 distinct 也是相同的作用，让我们直接来看范例
+如果会下 SQL 指令的应该都对 distinct 不陌生，它能帮我们把相同值的资料滤掉只留一笔，RxJS 里的 distinct 也是相同的作用，让我们直接来看示例
 
 ```javascript
 var source = Rx.Observable.from(['a', 'b', 'c', 'a', 'b'])
@@ -38,7 +38,7 @@ example: --a--b--c------|
 
 ```
 
-从上面的范例可以看得出来，当我们用 distinct 后，只要有重复出现的值就会被过滤掉。
+从上面的示例可以看得出来，当我们用 distinct 后，只要有重复出现的值就会被过滤掉。
 
 另外我们可以传入一个 selector callback function，这个 callback function 会传入一个接收到的元素，并回传我们真正希望比对的值，举例如下
 
@@ -79,7 +79,7 @@ example.subscribe({
 > 
 > 
 
-distinct 可以传入第二个参数 flushes observable 用来清除暂存的资料，范例如下
+distinct 可以传入第二个参数 flushes observable 用来清除暂存的资料，示例如下
 
 ```javascript
 var source = Rx.Observable.from(['a', 'b', 'c', 'a', 'c'])

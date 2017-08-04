@@ -17,7 +17,7 @@
 
 ### take
 
-take 是一个很简单的 operator，顾名思义就是取前几个元素后就结束，范例如下
+take 是一个很简单的 operator，顾名思义就是取前几个元素后就结束，示例如下
 
 ```
 var source = Rx.Observable.interval(1000);
@@ -80,7 +80,7 @@ example: -----0|
 
 ### takeUntil
 
-在实务上 takeUntil 很常使用到，他可以在某件事情发生时，让一个 observable 发送 完成(complete)讯息，范例如下
+在实务上 takeUntil 很常使用到，他可以在某件事情发生时，让一个 observable 发送 完成(complete)讯息，示例如下
 
 ```
 var source = Rx.Observable.interval(1000);
@@ -137,7 +137,7 @@ example.subscribe({
 
 [JSBin](https://jsbin.com/jogesut/6/edit?js,console,output) | [JSFiddle](https://jsfiddle.net/s6323859/ckyjuuva/4/)
 
-这个范例我们每点击一次 body 就会立刻发送 1,2,3，如果用 Marble diagram 表示则如下
+这个示例我们每点击一次 body 就会立刻发送 1,2,3，如果用 Marble diagram 表示则如下
 
 ```
 click  : ------c------------c--------
@@ -156,7 +156,7 @@ example: ------(123)--------(123)------------
 
 这里可以看到 `source` observable 内部每次发送的值也是 observable，这时我们用 concatAll 就可以把 source 摊平成 example。
 
-这里需要注意的是 `concatAll` 会处理 source 先发出来的 observable，必须等到这个 observable 结束，才会再处理下一个 source 发出来的 observable，让我们用下面这个范例说明。
+这里需要注意的是 `concatAll` 会处理 source 先发出来的 observable，必须等到这个 observable 结束，才会再处理下一个 source 发出来的 observable，让我们用下面这个示例说明。
 
 ```
 var obs1 = Rx.Observable.interval(1000).take(5);
