@@ -118,7 +118,7 @@ example: --a--b--c-----c|
 
 distinctUntilChanged 跟 distinct 一样会把相同的元素过滤掉，但 distinctUntilChanged 只会跟最后一次送出的元素比较，不会每个都比，举例如下
 
-```
+```javascript
 var source = Rx.Observable.from(['a', 'b', 'c', 'c', 'b'])
             .zip(Rx.Observable.interval(300), (x, y) => x);
 var example = source.distinctUntilChanged()
