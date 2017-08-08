@@ -54,7 +54,7 @@ Rx.Observable.fromEvent(searchInput, 'input')
 
 ```
 
-如果用上面这段程式码，就会每打一个字就送一次 request，当很多人在使用时就会对 server 造成很大的负担，实际上我们只需要使用者最后打出来的文字就好了，不用每次都送，这时就能用 debounceTime 做优化。
+如果用上面这段代码，就会每打一个字就送一次 request，当很多人在使用时就会对 server 造成很大的负担，实际上我们只需要使用者最后打出来的文字就好了，不用每次都送，这时就能用 debounceTime 做优化。
 
 ```javascript
 const searchInput = document.getElementById('searchInput');

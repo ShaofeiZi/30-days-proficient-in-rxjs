@@ -44,7 +44,7 @@ example.subscribe({
 
 [JSBin](https://jsbin.com/numuji/2/edit?js,console,output)
 
-上面这段程式码，当我们点击画面时就会开始送出数值，如果用 Marble Diagram 表示如下
+上面这段代码，当我们点击画面时就会开始送出数值，如果用 Marble Diagram 表示如下
 
 ```
 click  : ---------c-c------------------c--.. 
@@ -145,7 +145,7 @@ example.subscribe({
 
 ```
 
-上面这段程式码用 Marble Diagram 表示如下
+上面这段代码用 Marble Diagram 表示如下
 
 ```
 click  : ---------c-c------------------c--.. 

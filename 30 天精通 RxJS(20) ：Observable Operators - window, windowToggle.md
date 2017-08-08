@@ -18,7 +18,7 @@ window 是一整个家族，总共有五个相关的 operators
 
 这里我们只介绍 window 跟 windowToggle 这两个方法，其他三个的用法相对都简单很多，大家如果有需要可以再自行到官网查看。
 
-window 很类似 buffer 可以把一段时间内送出的元素拆出来，只是 buffer 是把元素拆分到阵列中变成
+window 很类似 buffer 可以把一段时间内送出的元素拆出来，只是 buffer 是把元素拆分到数组中变成
 
 ```javascript
 Observable<T> => Observable<Array<T>>
@@ -32,7 +32,7 @@ Observable<T> => Observable<Observable<T>>
 
 ```
 
-buffer 是把拆分出来的元素放到阵列并送出阵列；window 是把拆分出来的元素放到 observable 并送出 observable，让我们来看一个例子
+buffer 是把拆分出来的元素放到数组并送出数组；window 是把拆分出来的元素放到 observable 并送出 observable，让我们来看一个例子
 
 ```javascript
 var click = Rx.Observable.fromEvent(document, 'click');
