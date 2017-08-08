@@ -36,7 +36,7 @@ reduce 方法需要传两个参数，第一个是 callback 第二个则是起始
 *   第三次执行 callback，这时原本的状态(origin)就变成了 6，next 为 arr 的第四个元素 4，相加之后变成 10 回传并当作下一次的状态。
 *   这时 arr 的元素都已经遍历过了，所以不会直接把 10 回传。
 
-scan 整体的运作方式都跟 reduce 一样，示例如下
+scan 整体的运行方式都跟 reduce 一样，示例如下
 
 ```javascript
 var source = Rx.Observable.from('hello')

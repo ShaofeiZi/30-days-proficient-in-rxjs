@@ -75,7 +75,7 @@ combineLatest 很常用在运算多个因子的结果，例如最常见的 BMI �
 
 ### zip
 
-在讲 withLatestFrom 之前，先让我们先来看一下 zip 是怎么运作的，zip 会取每个 observable 相同顺位的元素并传入 callback，也就是说每个 observable 的第 n 个元素会一起被传入 callback，这里我们同样直接用示例讲解会比较清楚
+在讲 withLatestFrom 之前，先让我们先来看一下 zip 是怎么运行的，zip 会取每个 observable 相同顺位的元素并传入 callback，也就是说每个 observable 的第 n 个元素会一起被传入 callback，这里我们同样直接用示例讲解会比较清楚
 
 ```javascript
 var source = Rx.Observable.interval(500).take(3);
@@ -148,7 +148,7 @@ example: -h-e-l-l-o|
 
 ### withLatestFrom
 
-withLatestFrom 运作方式跟 combineLatest 有点像，只是他有主从的关系，只有在主要的 observable 送出新的值时，才会执行 callback，附随的 observable 只是在背景下运作。让我们看一个例子
+withLatestFrom 运行方式跟 combineLatest 有点像，只是他有主从的关系，只有在主要的 observable 送出新的值时，才会执行 callback，附随的 observable 只是在背景下运行。让我们看一个例子
 
 ```
 var main = Rx.Observable.from('hello').zip(Rx.Observable.interval(500), (x, y) => x);
@@ -196,6 +196,6 @@ withLatestFrom 很常用在一些 checkbox 型的功能，例如说一个编辑�
 
 今天介绍了三个合并用的 operators，这三个 operators 的 callback 都会依照合并的 observable 数量来传入参数，如果我们合并了三个 observable，callback 就会有三个参数，而不管合并几个 observable 都会只会回传一个值。
 
-这几个 operators 需要花比较多的时间思考，读者们不用硬记他的运作行为，只要稍微记得有这些 operators 可以用就可以了。等到真的要用时，再重新回来看他们的运作方式做选择。
+这几个 operators 需要花比较多的时间思考，读者们不用硬记他的运行行为，只要稍微记得有这些 operators 可以用就可以了。等到真的要用时，再重新回来看他们的运行方式做选择。
 
 不知道读者们今天有没有收获呢？ 如果有任何问题，欢迎在下方留言给我，谢谢！
