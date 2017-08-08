@@ -30,7 +30,7 @@ example.subscribe({
 
 这个示例我们每隔 500 毫秒会送出一个字串(String)，并用字串的方法 `toUpperCase()` 来把字串的英文字母改成大写，过程中可能未知的原因送出了一个数值(Number) `2` 导致发生例外(数值没有 toUpperCase 的方法)，这时我们在后面接的 catch 就能抓到错误。
 
-catch 可以回传一个新的 Observable、Promise、Array 或任何 Iterable 的物件，来传送之后的元素。
+catch 可以回传一个新的 Observable、Promise、Array 或任何 Iterable 的事件，来传送之后的元素。
 
 以我们的例子来说最后就会在送出 `X` 就结束，画成 Marble Diagram 如下
 

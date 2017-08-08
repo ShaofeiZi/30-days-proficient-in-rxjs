@@ -6,7 +6,7 @@
 
 ### scan
 
-scan 其实就是 Observable 版本的 reduce 只是命名不同。如果熟悉阵列操作的话，应该会知道原生的 JS Array 就有 reduce 的方法，使用方式如下
+scan 其实就是 Observable 版本的 reduce 只是命名不同。如果熟悉数组操作的话，应该会知道原生的 JS Array 就有 reduce 的方法，使用方式如下
 
 ```javascript
 var arr = [1, 2, 3, 4];
@@ -79,13 +79,13 @@ example: ----h----(he)----(hel)----(hell)----(hello)|
 
 > 
 > 
-> Jafar Husain 就曾说：「JavaScript 的 reduce 是错了，它最后应该永远回传阵列才对！」
+> Jafar Husain 就曾说：「JavaScript 的 reduce 是错了，它最后应该永远回传数组才对！」
 > 
 > 
 
 > 
 > 
-> 如果大家之前有到[这里](http://reactivex.io/learnrx/)练习的话，会发现 reduce 被设计成一定回传阵列，而这个网页就是 Jafar 做的。
+> 如果大家之前有到[这里](http://reactivex.io/learnrx/)练习的话，会发现 reduce 被设计成一定回传数组，而这个网页就是 Jafar 做的。
 > 
 > 
 
@@ -165,7 +165,7 @@ example: ---------([0,1,2])---------([3,4,5])
 
 ```
 
-buffer 要传入一个 observable(source2)，它会把原本的 observable (source)送出的元素缓存在阵列中，等到传入的 observable(source2) 送出元素时，就会触发把缓存的元素送出。
+buffer 要传入一个 observable(source2)，它会把原本的 observable (source)送出的元素缓存在数组中，等到传入的 observable(source2) 送出元素时，就会触发把缓存的元素送出。
 
 这里的示例 source2 是每一秒就会送出一个元素，我们可以改用 bufferTime 简洁的表达，如下
 

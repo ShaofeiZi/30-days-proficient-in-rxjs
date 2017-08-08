@@ -63,7 +63,7 @@ example.subscribe({
 
 [JSBin](https://jsbin.com/dipabe/3/edit?js,console) | [JSFiddle](https://jsfiddle.net/3pfs88g8/2/)
 
-这里可以看到，因为 source 送出的都是实例，而 js 物件的比对是比对内存位置，所以在这个例子中这些实例永远不会相等，但实际上我们想比对的是实例中的 value，这时我们就可以传入 selector callback，来选择我们要比对的值。
+这里可以看到，因为 source 送出的都是实例，而 js 事件的比对是比对内存位置，所以在这个例子中这些实例永远不会相等，但实际上我们想比对的是实例中的 value，这时我们就可以传入 selector callback，来选择我们要比对的值。
 
 > 
 > 

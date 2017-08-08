@@ -120,7 +120,7 @@ example: -----0-----1-----2----|
 
 ### concatAll
 
-有时我们的 Observable 发送的元素又是一个 observable，就像是二维阵列，阵列里面的元素是阵列，这时我们就可以用 `concatAll` 把它摊平成一维阵列，大家也可以直接把 concatAll 想成把所有元素 concat 起来。
+有时我们的 Observable 发送的元素又是一个 observable，就像是二维数组，数组里面的元素是数组，这时我们就可以用 `concatAll` 把它摊平成一维数组，大家也可以直接把 concatAll 想成把所有元素 concat 起来。
 
 ```
 var click = Rx.Observable.fromEvent(document.body, 'click');
@@ -215,7 +215,7 @@ example: --0--1--2--3--4-0-1----0|
 *   [JSBin](https://jsbin.com/yopawop/1/edit?js,output)
 *   [JSFiddle](https://jsfiddle.net/s6323859/dc0se480/)
 
-第二步我们要先取得各个 DOM 物件，元件(#drag) 跟 body。
+第二步我们要先取得各个 DOM 事件，元件(#drag) 跟 body。
 
 ```
 const dragDOM = document.getElementById('drag');

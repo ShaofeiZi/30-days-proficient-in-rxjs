@@ -1,6 +1,6 @@
 # 30 天精通 RxJS(17): Observable Operators - switch, mergeAll, concatAll
 
-今天我们要讲三个 operators，这三个 operators 都是用来处理 Higher Order Observable。所谓的 Higher Order Observable 就是指一个 Observable 送出的元素还是一个 Observable，就像是二维阵列一样，一个阵列中的每个元素都是阵列。如果用泛型来表达就像是
+今天我们要讲三个 operators，这三个 operators 都是用来处理 Higher Order Observable。所谓的 Higher Order Observable 就是指一个 Observable 送出的元素还是一个 Observable，就像是二维数组一样，一个数组中的每个元素都是数组。如果用泛型来表达就像是
 
 ```
 Observable<Observable<T>>

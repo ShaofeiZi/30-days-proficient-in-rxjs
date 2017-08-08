@@ -78,7 +78,7 @@ helloPeople.subscribe(console.log);
 
 > 
 > 
-> 在 RxJS 5 的实例中，其实每个 operator 是透过原来 observable 的 lift 方法来建立新的 observable，这个方法会在新回传的 observable 物件内偷塞两个属性，分别是 source（来源） 与 operator，记录原本的资料源跟当前使用的 operator。
+> 在 RxJS 5 的实例中，其实每个 operator 是透过原来 observable 的 lift 方法来建立新的 observable，这个方法会在新回传的 observable 事件内偷塞两个属性，分别是 source（来源） 与 operator，记录原本的资料源跟当前使用的 operator。
 > 
 > 
 
@@ -188,7 +188,7 @@ newest: -----1-----2-----3-----4--...
 
 ### map
 
-Observable 的 map 方法使用上跟阵列的 map 是一样的，我们传入一个 callback function，这个 callback function 会带入每次发发送来的元素，然后我们回传新的元素，如下
+Observable 的 map 方法使用上跟数组的 map 是一样的，我们传入一个 callback function，这个 callback function 会带入每次发发送来的元素，然后我们回传新的元素，如下
 
 ```
 var source = Rx.Observable.interval(1000);
@@ -241,7 +241,7 @@ newest: -----2-----2-----2-----2--...
 
 ### filter
 
-filter 在使用上也跟阵列的相同，我们要传入一个 callback function，这个 function 会传入每个被发送的元素，并且回传一个 boolean 值，如果为 true 的话就会保留，如果为 false 就会被滤掉，如下
+filter 在使用上也跟数组的相同，我们要传入一个 callback function，这个 function 会传入每个被发送的元素，并且回传一个 boolean 值，如果为 true 的话就会保留，如果为 false 就会被滤掉，如下
 
 ```
 var source = Rx.Observable.interval(1000);
@@ -266,7 +266,7 @@ newest: -----0-----------2-----------4-...
 
 > 
 > 
-> 读者应该有发现 map, filter 这些方法其实都跟阵列的相同，因为这些都是 functional programming 的通用函数，就算换个语言也有机会看到相同的命名及相同的用法。
+> 读者应该有发现 map, filter 这些方法其实都跟数组的相同，因为这些都是 functional programming 的通用函数，就算换个语言也有机会看到相同的命名及相同的用法。
 > 
 > 
 

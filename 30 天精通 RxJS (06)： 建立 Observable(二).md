@@ -87,7 +87,7 @@ source.subscribe({
 
 ### from
 
-可能已经有人发现其实 `of` operator 的一个一个参数其实就是一个 list，而 list 在 JavaScript 中最常见的形式是阵列(array)，那我们有没有办法把一个已存在的阵列当作参数呢？
+可能已经有人发现其实 `of` operator 的一个一个参数其实就是一个 list，而 list 在 JavaScript 中最常见的形式是数组(array)，那我们有没有办法把一个已存在的数组当作参数呢？
 
 有的，我们可以用 `from` 来接收任何可列举的参数！
 
@@ -153,7 +153,7 @@ source.subscribe({
 
 上面的代码会把字串里的每个字一一印出来。
 
-我们也可以传入 Promise 物件，如下
+我们也可以传入 Promise 事件，如下
 
 ```
 var source = Rx.Observable
@@ -182,7 +182,7 @@ source.subscribe({
 
 [JSBin](https://jsbin.com/gefisiy/3/edit?js,console) | [JSFiddle](https://jsfiddle.net/s6323859/d95a8peo/5/)
 
-如果我们传入 Promise 物件实例，当正常回传时，就会被送到 next，并立即发送完成通知，如果有错误则会送到 error。
+如果我们传入 Promise 事件实例，当正常回传时，就会被送到 next，并立即发送完成通知，如果有错误则会送到 error。
 
 > 
 > 
@@ -215,11 +215,11 @@ source.subscribe({
 
 [JSBin](https://jsbin.com/xerori/6/edit?js,console,output) | [JSFiddle](https://jsfiddle.net/s6323859/e7u6k1b5/4/)
 
-`fromEvent` 的第一个参数要传入 DOM 物件，第二个参数传入要监听的事件名称。上面的程式会针对 body 的 click 事件做监听，每当点击 body 就会印出 event。
+`fromEvent` 的第一个参数要传入 DOM 事件，第二个参数传入要监听的事件名称。上面的程式会针对 body 的 click 事件做监听，每当点击 body 就会印出 event。
 
 > 
 > 
-> 取得 DOM 物件的常用方法：
+> 取得 DOM 事件的常用方法：
 > `document.getElementById()`
 > `document.querySelector()`
 > `document.getElementsByTagName()`
@@ -283,7 +283,7 @@ egghead.notify('Hello! Can you hear me?');
 
 [JSBin](https://jsbin.com/wiruxej/1/edit?js,console) | [JSFiddle](https://jsfiddle.net/s6323859/xpkxhhz3/)
 
-上面的代码可以看到，`egghead` 是 `Producer` 的实例，同时具有 注册监听及移除监听两种方法，我们可以将这两个方法依序传入 `fromEventPattern` 来建立 Observable 的物件实例！
+上面的代码可以看到，`egghead` 是 `Producer` 的实例，同时具有 注册监听及移除监听两种方法，我们可以将这两个方法依序传入 `fromEventPattern` 来建立 Observable 的事件实例！
 
 > 
 > 
@@ -512,7 +512,7 @@ source.subscribe({
 
 今天我们讲到很多 无穷的 observable，例如 interval, never。但有时我们可能会在某些行为后不需要这些资源，要做到这件事最简单的方式就是 `unsubscribe`。
 
-其实在订阅 observable 后，会回传一个 subscription 物件，这个物件具有释放资源的`unsubscribe` 方法，示例如下
+其实在订阅 observable 后，会回传一个 subscription 事件，这个事件具有释放资源的`unsubscribe` 方法，示例如下
 
 ```
 var source = Rx.Observable.timer(1000, 1000);
@@ -543,7 +543,7 @@ setTimeout(() => {
 
 [JSBin](https://jsbin.com/xerori/15/edit?js,console) | [JSFiddle](https://jsfiddle.net/s6323859/d95a8peo/6/)
 
-这里我们用了 `setTimeout` 在 5 秒后，执行了 `subscription.unsubscribe()` 来停止订阅并释放资源。另外 subscription 物件还有其他合并订阅等作用，这个我们之后有机会会在提到！
+这里我们用了 `setTimeout` 在 5 秒后，执行了 `subscription.unsubscribe()` 来停止订阅并释放资源。另外 subscription 事件还有其他合并订阅等作用，这个我们之后有机会会在提到！
 
 > 
 > 

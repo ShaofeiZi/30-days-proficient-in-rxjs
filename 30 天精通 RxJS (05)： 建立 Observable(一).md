@@ -47,7 +47,7 @@ Observer 是这三个当中一定会用到却是最简单的，所以我们今�
 
 ## 建立 Observable: `create`
 
-建立 Observable 的方法有非常多种，其中 `create` 是最基本的方法。`create` 方法在 `Rx.Observable` 物件中，要传入一个 callback function ，这个 callback function 会接收一个 observer 参数，如下
+建立 Observable 的方法有非常多种，其中 `create` 是最基本的方法。`create` 方法在 `Rx.Observable` 事件中，要传入一个 callback function ，这个 callback function 会接收一个 observer 参数，如下
 
 ```
 var observable = Rx.Observable
@@ -173,11 +173,11 @@ RxJS 30 days!
 
 ## 观察者 Observer
 
-Observable 可以被订阅(subscribe)，或说可以被观察，而订阅 Observable 的物件又称为 **观察者(Observer)**。观察者是一个具有三个方法(method)的物件，每当 Observable 发生事件时，便会呼叫观察者相对应的方法。
+Observable 可以被订阅(subscribe)，或说可以被观察，而订阅 Observable 的事件又称为 **观察者(Observer)**。观察者是一个具有三个方法(method)的事件，每当 Observable 发生事件时，便会呼叫观察者相对应的方法。
 
 > 
 > 
-> 注意这里的观察者(Observer)跟上一篇讲的观察者模式(Observer Pattern)无关，观察者模式是一种设计模式，是思考问题的解决过程，而这里讲的观察者是一个被定义的物件。
+> 注意这里的观察者(Observer)跟上一篇讲的观察者模式(Observer Pattern)无关，观察者模式是一种设计模式，是思考问题的解决过程，而这里讲的观察者是一个被定义的事件。
 > 
 > 
 
@@ -295,7 +295,7 @@ observable.subscribe(
 
 ```
 
-`observable.subscribe` 会在内部自动组成 observer 物件来操作。
+`observable.subscribe` 会在内部自动组成 observer 事件来操作。
 
 ## 实例细节
 
@@ -329,7 +329,7 @@ class Producer {
 
 我们在内部储存了一份所有的观察者清单(`this.listeners`)，在要发布通知时会对逐一的呼叫这份清单的观察者。
 
-但在 Observable 不是这样实例的，在其内部并没有一份订阅者的清单。订阅 Observable 的行为比较像是执行一个物件的方法，并把资料传进这个方法中。
+但在 Observable 不是这样实例的，在其内部并没有一份订阅者的清单。订阅 Observable 的行为比较像是执行一个事件的方法，并把资料传进这个方法中。
 
 我们以下面的代码做说明
 
@@ -386,7 +386,7 @@ subscribe({
 今天在讲关于建立 Observable 的实例，用到了 `create` 的方法，但大部分的内容还是在讲 Observable 几个重要的观念，如下
 
 *   Observable 可以同时处理**同步**跟**非同步**行为
-*   Observer 是一个物件，这个物件具有三个方法，分别是 **next**, **error**, **complete**
+*   Observer 是一个事件，这个事件具有三个方法，分别是 **next**, **error**, **complete**
 *   订阅一个 Observable 就像在执行一个 function
 
 不知道读者是否有所收获，如果有任何问题或建议，欢迎在下方留言给我，谢谢。

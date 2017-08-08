@@ -212,7 +212,7 @@ class IteratorFromArray {
 
 ```
 
-Iterator Pattern 虽然很单纯，但同时带来了两个优势，第一它渐进式取得资料的特性可以拿来做延迟运算(Lazy evaluation)，让我们能用它来处理大资料结构。第二因为 iterator 本身是序列，所以可以实例所有阵列的运算方法像 map, filter... 等！
+Iterator Pattern 虽然很单纯，但同时带来了两个优势，第一它渐进式取得资料的特性可以拿来做延迟运算(Lazy evaluation)，让我们能用它来处理大资料结构。第二因为 iterator 本身是序列，所以可以实例所有数组的运算方法像 map, filter... 等！
 
 这里我们利用最后一段代码实例 map 试试
 
