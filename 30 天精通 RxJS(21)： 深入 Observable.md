@@ -39,7 +39,7 @@ var example = source
 
 ```
 
-上面这段代码，相信读者们都很熟悉了，大家应该都有注意到 `source.filter(...)` 就会返回一整个新数组，再接下一个 operator 又会再返回一个新的数组，这一点其实在我们实作 map 跟 filter 时就能观察到
+上面这段代码，相信读者们都很熟悉了，大家应该都有注意到 `source.filter(...)` 就会返回一整个新数组，再接下一个 operator 又会再返回一个新的数组，这一点其实在我们实例 map 跟 filter 时就能观察到
 
 ```javascript
 Array.prototype.map = function(callback) {
@@ -74,7 +74,7 @@ example.subscribe(console.log);
 2.  送出 `2` 到 filter 在被送到 map 转成 `3`，送到 observer `console.log` 印出
 3.  送出 `3` 到 filter 被过滤掉
 
-每个元素送出后就是运算到底，在这个过程中不会等待其他的元素运算。这就是渐进式取值的特性，不知道读者们还记不记得我们在讲 Iterator 跟 Observer 时，就特别强调这两个 Pattern 的共同特性是渐进式取值，而我们在实作 Iterator 的过程中其实就能看出这个特性的运行方式
+每个元素送出后就是运算到底，在这个过程中不会等待其他的元素运算。这就是渐进式取值的特性，不知道读者们还记不记得我们在讲 Iterator 跟 Observer 时，就特别强调这两个 Pattern 的共同特性是渐进式取值，而我们在实例 Iterator 的过程中其实就能看出这个特性的运行方式
 
 ```javascript
 class IteratorFromArray {
