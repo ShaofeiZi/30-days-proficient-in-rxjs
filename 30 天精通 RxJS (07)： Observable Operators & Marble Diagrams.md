@@ -15,7 +15,7 @@
 
 Operators 就是一个个被附加到 Observable 型别的函数，例如像是 map, filter, contactAll... 等等，所有这些函数都会拿到原本的 observable 并回传一个新的 observable，就像有点像下面这个样子
 
-```
+```javascript
 var people = Rx.Observable.of('Jerry', 'Anna');
 
 function map(source, callback) {
@@ -48,7 +48,7 @@ helloPeople.subscribe(console.log);
 
 当然我们也可以直接把 map 塞到 `Observable.prototype`
 
-```
+```javascript
 function map(callback) {
     return Rx.Observable.create((observer) => {
         return this.subscribe(
@@ -106,49 +106,49 @@ helloPeople.subscribe(console.log);
 
 我们用 `-` 来表达一小段时间，这些 `-` 串起就代表一个 observable。
 
-```
+```javascript
 ----------------
 
 ```
 
 `X` (大写 X)则代表有错误发生
 
-```
+```javascript
 ---------------X
 
 ```
 
 `|` 则代表 observable 结束
 
-```
+```javascript
 ----------------|
 
 ```
 
 在这个时间序当中，我们可能会发发送值(value)，如果值是数字则直接用阿拉伯数字取代，其他的资料型别则用相近的英文符号代表，这里我们用 `interval` 举例
 
-```
+```javascript
 var source = Rx.Observable.interval(1000);
 
 ```
 
 `source` 的图形就会长像这样
 
-```
+```javascript
 -----0-----1-----2-----3--...
 
 ```
 
 当 observable 是同步送值的时候，例如
 
-```
+```javascript
 var source = Rx.Observable.of(1,2,3,4);
 
 ```
 
 `source` 的图形就会长像这样
 
-```
+```javascript
 (1234)|
 
 ```
@@ -157,7 +157,7 @@ var source = Rx.Observable.of(1,2,3,4);
 
 另外的 Marble diagrams 也能够表达 operator 的前后转换，例如
 
-```
+```javascript
 var source = Rx.Observable.interval(1000);
 var newest = source.map(x => x + 1); 
 
@@ -165,7 +165,7 @@ var newest = source.map(x => x + 1);
 
 这时 Marble diagrams 就会长像这样
 
-```
+```javascript
 source: -----0-----1-----2-----3--...
             map(x => x + 1)
 newest: -----1-----2-----3-----4--...
@@ -190,7 +190,7 @@ newest: -----1-----2-----3-----4--...
 
 Observable 的 map 方法使用上跟数组的 map 是一样的，我们传入一个 callback function，这个 callback function 会带入每次发发送来的元素，然后我们回传新的元素，如下
 
-```
+```javascript
 var source = Rx.Observable.interval(1000);
 var newest = source.map(x => x + 1); 
 
@@ -205,7 +205,7 @@ newest.subscribe(console.log);
 
 用 Marble diagrams 表达就是
 
-```
+```javascript
 source: -----0-----1-----2-----3--...
             map(x => x + 1)
 newest: -----1-----2-----3-----4--...
@@ -218,7 +218,7 @@ newest: -----1-----2-----3-----4--...
 
 mapTo 可以把传进来的值改成一个固定的值，如下
 
-```
+```javascript
 var source = Rx.Observable.interval(1000);
 var newest = source.mapTo(2); 
 
@@ -232,7 +232,7 @@ newest.subscribe(console.log);
 
 mapTo 用 Marble diagrams 表达
 
-```
+```javascript
 source: -----0-----1-----2-----3--...
                 mapTo(2)
 newest: -----2-----2-----2-----2--...
@@ -243,7 +243,7 @@ newest: -----2-----2-----2-----2--...
 
 filter 在使用上也跟数组的相同，我们要传入一个 callback function，这个 function 会传入每个被发送的元素，并且回传一个 boolean 值，如果为 true 的话就会保留，如果为 false 就会被滤掉，如下
 
-```
+```javascript
 var source = Rx.Observable.interval(1000);
 var newest = source.filter(x => x % 2 === 0); 
 
@@ -257,7 +257,7 @@ newest.subscribe(console.log);
 
 filter 用 Marble diagrams 表达
 
-```
+```javascript
 source: -----0-----1-----2-----3-----4-...
             filter(x => x % 2 === 0)
 newest: -----0-----------2-----------4-...

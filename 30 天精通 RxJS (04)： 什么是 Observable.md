@@ -15,7 +15,7 @@
 
 Observer Pattern 其实很常遇到，在许多 API 的设计上都用了 Observer Pattern 实例，最简单的例子就是 DOM 事件的事件监听，代码如下
 
-```
+```javascript
 function clickHandler(event) {
 	console.log('user click!');
 }
@@ -36,7 +36,7 @@ Observer 的观念其实就这么的简单，但笔者希望能透过代码带�
 > 
 > 
 
-```
+```javascript
 function Producer() {
 
 	// 这个 if 只是避免使用者不小心把 Producer 当作函数来调用
@@ -79,7 +79,7 @@ Producer.prototype.notify = function(message) {
 
 附上 ES6 版本的代码，跟上面代码的行为基本上是一样的
 
-```
+```javascript
 class Producer {
 	constructor() {
 		this.listeners = [];
@@ -105,7 +105,7 @@ class Producer {
 
 有了上面的代码后，我们就可以来建立事件实例了
 
-```
+```javascript
 var egghead = new Producer(); 
 // new 出一个 Producer 实例叫 egghead
 
@@ -126,7 +126,7 @@ egghead.notify('A new course!!') // 当某件事情方法时，执行
 
 当我们执行到这里时，会印出：
 
-```
+```javascript
 a new course!! from listener1
 a new course!! from listener2
 
@@ -142,7 +142,7 @@ Iterator 是一个事件，它的就像是一个指针(pointer)，指向一个�
 
 先让我们来看看原生的 JS 要怎么建立 iterator
 
-```
+```javascript
 var arr = [1, 2, 3];
 
 var iterator = arr[Symbol.iterator]();
@@ -177,7 +177,7 @@ JavaScript 的 Iterator 只有一个 next 方法，这个 next 方法只会回�
 
 当然我们可以自己实例简单的 Iterator Pattern
 
-```
+```javascript
 function IteratorFromArray(arr) {
 	if(!(this instanceof IteratorFromArray)) {
 		throw new Error('请用 new IteratorFromArray()!');
@@ -196,7 +196,7 @@ IteratorFromArray.prototype.next = function() {
 
 附上 ES6 版本的代码，行为同上
 
-```
+```javascript
 class IteratorFromArray {
 	constructor(arr) {
 		this._array = arr;
@@ -216,7 +216,7 @@ Iterator Pattern 虽然很单纯，但同时带来了两个优势，第一它渐
 
 这里我们利用最后一段代码实例 map 试试
 
-```
+```javascript
 class IteratorFromArray {
 	constructor(arr) {
 		this._array = arr;
@@ -261,7 +261,7 @@ newIterator.next();
 
 以下我们用 generator（生成器） 实例 iterator 来举一个例子
 
-```
+```javascript
 	function* getNumbers(words) {
 		for (let word of words) {
 			if (/^[0-9]+$/.test(word)) {

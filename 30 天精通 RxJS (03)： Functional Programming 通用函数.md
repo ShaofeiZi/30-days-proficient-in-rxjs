@@ -23,7 +23,7 @@
 
 原本我们可能要透过 for loop 取出数组中的每一个元素
 
-```
+```javascript
 var arr = ['Jerry', 'Anna'];
 
 for(var i = 0; i < arr.length; i++) {
@@ -34,7 +34,7 @@ for(var i = 0; i < arr.length; i++) {
 
 现在可以直接透过数组的 forEach 取出每一个元素。
 
-```
+```javascript
 var arr = ['Jerry', 'Anna'];
 
 arr.forEach(item => console.log(item));
@@ -47,7 +47,7 @@ forEach 是 FP 操作数组的基本方法，我们可以用这个方法来实�
 
 试着把 newCourseList 每个元素的 { id, title } 塞到新的数组 idAndTitlePairs
 
-```
+```javascript
 var newCourseList = [
 	{
 		"id": 511021,
@@ -100,7 +100,7 @@ newCourseList.forEach((course) => {
 > 
 > 
 
-```
+```javascript
 // 我们希望每一个数组都有 map 这个方法，所以我们在 Array.prototype 扩充 map function
 Array.prototype.map = function(callback) {
   var result = []; // map 最后一定会返回一个新数组，所以我们先创建一个新数组
@@ -124,7 +124,7 @@ Array.prototype.map = function(callback) {
 
 到这里我们就实例完成 map 的方法了，让我们来试试这个方法吧！
 
-```
+```javascript
 var idAndTitle = newCourseList
                  .map((course) => {
                      return { id: course.id, title: course.title };
@@ -141,7 +141,7 @@ var idAndTitle = newCourseList
 
 让我们过滤出 rating 值是 5 的元素
 
-```
+```javascript
 var ratingIsFive = [];
 
 newCourseList.forEach((course) => {
@@ -157,7 +157,7 @@ newCourseList.forEach((course) => {
 1.  遍历 newCourseList 中的所有元素
 2.  判断元素是否符合条件，符合则加到新的数组中
 
-```
+```javascript
 Array.prototype.filter = function(callback) {
 	var result = [];
 	this.forEach((item, index) => {
@@ -171,7 +171,7 @@ Array.prototype.filter = function(callback) {
 
 试试这个方法
 
-```
+```javascript
 var ratingIsFive = newCourseList
                    .filter((course) => course.rating === 5);
 
@@ -181,7 +181,7 @@ var ratingIsFive = newCourseList
 
 如果我想要取出所有 rating 是 5 的所有 course title
 
-```
+```javascript
 var ratingIsFive = newCourseList
                    .filter((course) => course.rating === 5)
                    .map(course => course.title);
@@ -194,7 +194,7 @@ var ratingIsFive = newCourseList
 
 假如我们要取出 courseLists 中所有 rating 为 5 的课程，这时可能就会用到两个 forEach
 
-```
+```javascript
 var user = {
   id: 888,
   name: 'JerryHong',
@@ -248,7 +248,7 @@ user.courseLists.forEach(list => {
 让我们来加入一个 concatAll 方法来简化这段代码吧！
 concatAll 要做的事情很简单，就是把一个二维数组转成一维。
 
-```
+```javascript
 Array.prototype.concatAll = function() {
   var result = [];
 
@@ -276,7 +276,7 @@ Array.prototype.concatAll = function() {
 
 同样的我们用前面定要好的 courseLists 来试试 concatAll 吧！
 
-```
+```javascript
 var allCourseIds = user.courseLists.map(list => {
 	return list.courses.filter(course => course.rating === 5)
 }).concatAll()
@@ -285,7 +285,7 @@ var allCourseIds = user.courseLists.map(list => {
 
 这边出一个比较难的题目，大家可以想想看要怎么解
 
-```
+```javascript
 var courseLists = [{
   "name": "My Courses",
   "courses": [{

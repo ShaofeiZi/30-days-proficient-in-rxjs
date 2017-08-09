@@ -28,7 +28,7 @@ Observable 有许多创建实例的方法，称为 creation operator。下面我
 
 还记得我们昨天用 `create` 来建立一个同步处理的 observable 吗？
 
-```
+```javascript
 var source = Rx.Observable
     .create(function(observer) {
         observer.next('Jerry');
@@ -60,7 +60,7 @@ source.subscribe({
 
 下面的代码行为同上
 
-```
+```javascript
 var source = Rx.Observable.of('Jerry', 'Anna');
 
 source.subscribe({
@@ -91,7 +91,7 @@ source.subscribe({
 
 有的，我们可以用 `from` 来接收任何可列举的参数！
 
-```
+```javascript
 var arr = ['Jerry', 'Anna', 2016, 2017, '30 days'] 
 var source = Rx.Observable.from(arr);
 
@@ -128,7 +128,7 @@ source.subscribe({
 
 另外 from 还能接收字串(string)，如下
 
-```
+```javascript
 var source = Rx.Observable.from('铁人赛');
 
 source.subscribe({
@@ -155,7 +155,7 @@ source.subscribe({
 
 我们也可以传入 Promise 事件，如下
 
-```
+```javascript
 var source = Rx.Observable
   .from(new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -194,7 +194,7 @@ source.subscribe({
 
 我们也可以用 Event 建立 Observable，透过 `fromEvent` 的方法，如下
 
-```
+```javascript
 var source = Rx.Observable.fromEvent(document.body, 'click');
 
 source.subscribe({
@@ -232,7 +232,7 @@ source.subscribe({
 要用 Event 来建立 Observable 实例还有另一个方法 `fromEventPattern`，这个方法是给类事件使用。所谓的类事件就是指其行为跟事件相像，同时具有注册监听及移除监听两种行为，就像 DOM Event 有 `addEventListener` 及 `removeEventListener` 一样！
 举一个例子，我们在[【30 天精通 RxJS (04)： 什么是 Observable ?】](https://github.com/ShaofeiZi/30-days-proficient-in-rxjs/blob/master/30%20%E5%A4%A9%E7%B2%BE%E9%80%9A%20RxJS%20(04)%EF%BC%9A%20%E4%BB%80%E4%B9%88%E6%98%AF%20Observable.md)实例的 Observer Pattern 就是类事件，代码如下：
 
-```
+```javascript
 class Producer {
 	constructor() {
 		this.listeners = [];
@@ -291,7 +291,7 @@ egghead.notify('Hello! Can you hear me?');
 > 
 > 
 
-```
+```javascript
 Rx.Observable
     .fromEventPattern(
         egghead.addListener.bind(egghead), 
@@ -307,7 +307,7 @@ Rx.Observable
 
 有点像是数学上的 **零(0)**，虽然有时候好像没什么，但却非常的重要。在 Observable 的世界里也有类似的东西，像是`empty`
 
-```
+```javascript
 var source = Rx.Observable.empty();
 
 source.subscribe({
@@ -337,7 +337,7 @@ source.subscribe({
 
 数学上还有一个跟零(0)很像的数，那就是 **无穷(∞)**，在 Observable 的世界里我们用 `never` 来建立无穷的 observable
 
-```
+```javascript
 var source = Rx.Observable.never();
 
 source.subscribe({
@@ -372,7 +372,7 @@ never 会给我们一个无穷的 observable，如果我们订阅它又会发生
 
 最后还有一个 operator `throw`，它也就只做一件事就是抛出错误。
 
-```
+```javascript
 var source = Rx.Observable.throw('Oop!');
 
 source.subscribe({
@@ -400,7 +400,7 @@ source.subscribe({
 
 接着我们要看两个跟时间有关的 operators，在 JS 中我们可以用 `setInterval` 来建立一个持续的行为，这也能用在 Observable 中
 
-```
+```javascript
 var source = Rx.Observable.create(function(observer) {
     var i = 0;
     setInterval(() => {
@@ -430,7 +430,7 @@ source.subscribe({
 
 上面这段代码，会每隔一秒发送一个从零开始递增的整数，在 Observable 的世界也有一个 operator 可以更方便地做到这件事，就是 `interval`
 
-```
+```javascript
 var source = Rx.Observable.interval(1000);
 
 source.subscribe({
@@ -457,7 +457,7 @@ source.subscribe({
 
 另外有一个很相似的 operator 叫 `timer`， `timer` 可以给两个参数，示例如下
 
-```
+```javascript
 var source = Rx.Observable.timer(1000, 5000);
 
 source.subscribe({
@@ -485,7 +485,7 @@ source.subscribe({
 
 另外 `timer` 也可以只接收一个参数
 
-```
+```javascript
 var source = Rx.Observable.timer(1000);
 
 source.subscribe({
@@ -514,7 +514,7 @@ source.subscribe({
 
 其实在订阅 observable 后，会回传一个 subscription 事件，这个事件具有释放资源的`unsubscribe` 方法，示例如下
 
-```
+```javascript
 var source = Rx.Observable.timer(1000, 1000);
 
 // 取得 subscription

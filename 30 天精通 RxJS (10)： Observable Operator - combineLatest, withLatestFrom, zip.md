@@ -43,7 +43,7 @@ example.subscribe({
 
 大家第一次看到这个 output 应该都会很困惑，我们直接来看 Marble Diagram 吧！
 
-```
+```javascript
 source : ----0----1----2|
 newest : --0--1--2--3--4--5|
 
@@ -99,7 +99,7 @@ example.subscribe({
 
 Marble Diagram 长这样
 
-```
+```javascript
 source : ----0----1----2|
 newest : --0--1--2--3--4--5|
     zip(newest, (x, y) => x + y)
@@ -120,7 +120,7 @@ example: ----0----2----4|
 
 zip 会把各个 observable 相同顺位送出的值传入 callback，这很常拿来做 demo 使用，比如我们想要间隔 100ms 送出 'h', 'e', 'l', 'l', 'o'，就可以这么做
 
-```
+```javascript
 var source = Rx.Observable.from('hello');
 var source2 = Rx.Observable.interval(100);
 
@@ -130,7 +130,7 @@ var example = source.zip(source2, (x, y) => x);
 
 这里的 Marble Diagram 就很简单
 
-```
+```javascript
 source : (hello)|
 source2: -0-1-2-3-4-...
         zip(source2, (x, y) => x)
@@ -150,7 +150,7 @@ example: -h-e-l-l-o|
 
 withLatestFrom 运行方式跟 combineLatest 有点像，只是他有主从的关系，只有在主要的 observable 送出新的值时，才会执行 callback，附随的 observable 只是在背景下运行。让我们看一个例子
 
-```
+```javascript
 var main = Rx.Observable.from('hello').zip(Rx.Observable.interval(500), (x, y) => x);
 var some = Rx.Observable.from([0,1,0,0,0,1]).zip(Rx.Observable.interval(300), (x, y) => x);
 
@@ -170,7 +170,7 @@ example.subscribe({
 
 先看一下 Marble Diagram
 
-```
+```javascript
 main   : ----h----e----l----l----o|
 some   : --0--1--0--0--0--1|
 

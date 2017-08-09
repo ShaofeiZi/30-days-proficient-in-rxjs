@@ -55,7 +55,7 @@ JavaScript 的 try/catch 可以捕捉同步的例外，但非同步的程式就�
 
 **原生 JavaScript**
 
-```
+```javascript
 var handler = (e) => {
 	console.log(e);
 	document.body.removeEventListener('click', handler); // 结束监听
@@ -68,7 +68,7 @@ document.body.addEventListener('click', handler);
 
 **使用 Rx 大概的样子**
 
-```
+```javascript
 Rx.Observable
 	.fromEvent(document.body, 'click') // 注册监听
 	.take(1) // 只取一次

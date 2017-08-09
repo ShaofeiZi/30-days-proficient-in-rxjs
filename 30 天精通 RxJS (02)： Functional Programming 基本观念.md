@@ -17,14 +17,14 @@ Functional Programming 是一种编程范式(programming paradigm)，就像 Obje
 
 简单说 Functional Programming 核心思想就是做运算处理，并用 function 来思考问题，例如像以下的算数运算式：
 
-```
+```javascript
 (5 + 6) - 1 * 3
 
 ```
 
 我们可以写成
 
-```
+```javascript
 const add = (a, b) => a + b
 const mul = (a, b) => a * b
 const sub = (a, b) => a - b
@@ -45,14 +45,14 @@ sub(add(5, 6), mul(1, 3))
 
 **函数能够被赋值给变数**
 
-```
+```javascript
 var hello = function() {}
 
 ```
 
 **函数能被当作参数传入**
 
-```
+```javascript
 fetch('www.google.com')
 .then(function(response) {}) // 匿名 function 被传入 then()
 
@@ -60,7 +60,7 @@ fetch('www.google.com')
 
 **函数能被当作回传值**
 
-```
+```javascript
 var a = function(a) {
 	return function(b) {
 	  return a + b;
@@ -79,14 +79,14 @@ Functional Programming 都是 表达式 (Expression) 不会是 陈述式(Stateme
 
 **表达式** 是一个运算过程，一定会有返回值，例如执行一个 function
 
-```
+```javascript
 add(1,2)
 
 ```
 
 *   陈述式 则是表现某个行为，例如一个 赋值给一个变数
 
-```
+```javascript
 a = 1;
 
 ```
@@ -111,7 +111,7 @@ a = 1;
 
 举个例子：
 
-```
+```javascript
 var arr = [1, 2, 3, 4, 5];
 
 arr.slice(0, 3); // [1, 2, 3]
@@ -124,7 +124,7 @@ arr.slice(0, 3); // [1, 2, 3]
 
 这里可以看到 slice 不管执行几次，返回值都是相同的，并且除了返回一个值(value)之外并没有做任何事，所以 `slice` 就是一个 pure function。
 
-```
+```javascript
 var arr = [1, 2, 3, 4, 5];
 
 arr.splice(0, 3); // [1, 2, 3]
@@ -158,7 +158,7 @@ Functional Programming 强调没有 Side Effect，也就是 function 要保持�
 
 由于最近很红的 Redux 使我能很好的举例，让大家了解什么是用参数保存状态。了解 Redux 的开发者应该会知 Redux 的状态是由各个 reducer 所组成的，而每个 reducer 的状态就是保存在参数中！
 
-```
+```javascript
 function countReducer(state = 0, action) {
 // ...
 }
@@ -167,7 +167,7 @@ function countReducer(state = 0, action) {
 
 如果你跟 Redux 不熟可以看下面递回的例子
 
-```
+```javascript
 function findIndex(arr, predicate, start = 0) {
     if (0 <= start && start < arr.length) {
         if (predicate(arr[start])) {
@@ -200,7 +200,7 @@ findIndex(['a', 'b'], x => x === 'b'); // 找数组中 'b' 的 index
 
 当我们透过一系列的函数封装资料的操作过程，代码能变得非常的简洁且可读性极高，例如下面的例子
 
-```
+```javascript
 [9, 4].concat([8, 7]) // 合并数组
       .sort()  // 排序
       .filter(x => x > 5) // 过滤出大于 5 的

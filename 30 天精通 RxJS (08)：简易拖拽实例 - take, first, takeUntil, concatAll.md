@@ -19,7 +19,7 @@
 
 take 是一个很简单的 operator，顾名思义就是取前几个元素后就结束，示例如下
 
-```
+```javascript
 var source = Rx.Observable.interval(1000);
 var example = source.take(3);
 
@@ -41,7 +41,7 @@ example.subscribe({
 
 用 Marble diagram 表示如下
 
-```
+```javascript
 source : -----0-----1-----2-----3--..
                 take(3)
 example: -----0-----1-----2|
@@ -52,7 +52,7 @@ example: -----0-----1-----2|
 
 first 会取 observable 发送的第 1 个元素之后就直接结束，行为跟 take(1) 一致。
 
-```
+```javascript
 var source = Rx.Observable.interval(1000);
 var example = source.first();
 
@@ -71,7 +71,7 @@ example.subscribe({
 
 用 Marble diagram 表示如下
 
-```
+```javascript
 source : -----0-----1-----2-----3--..
                 first()
 example: -----0|
@@ -82,7 +82,7 @@ example: -----0|
 
 在实务上 takeUntil 很常使用到，他可以在某件事情发生时，让一个 observable 发送 完成(complete)讯息，示例如下
 
-```
+```javascript
 var source = Rx.Observable.interval(1000);
 var click = Rx.Observable.fromEvent(document.body, 'click');
 var example = source.takeUntil(click);     
@@ -108,7 +108,7 @@ example.subscribe({
 
 如果画成 Marble Diagram 则会像下面这样
 
-```
+```javascript
 source : -----0-----1-----2------3--
 click  : ----------------------c----
                 takeUntil(click)
@@ -122,7 +122,7 @@ example: -----0-----1-----2----|
 
 有时我们的 Observable 发送的元素又是一个 observable，就像是二维数组，数组里面的元素是数组，这时我们就可以用 `concatAll` 把它摊平成一维数组，大家也可以直接把 concatAll 想成把所有元素 concat 起来。
 
-```
+```javascript
 var click = Rx.Observable.fromEvent(document.body, 'click');
 var source = click.map(e => Rx.Observable.of(1,2,3));
 
@@ -139,7 +139,7 @@ example.subscribe({
 
 这个示例我们每点击一次 body 就会立刻发送 1,2,3，如果用 Marble diagram 表示则如下
 
-```
+```javascript
 click  : ------c------------c--------
 
         map(e => Rx.Observable.of(1,2,3))
@@ -158,7 +158,7 @@ example: ------(123)--------(123)------------
 
 这里需要注意的是 `concatAll` 会处理 source 先发出来的 observable，必须等到这个 observable 结束，才会再处理下一个 source 发出来的 observable，让我们用下面这个示例说明。
 
-```
+```javascript
 var obs1 = Rx.Observable.interval(1000).take(5);
 var obs2 = Rx.Observable.interval(500).take(2);
 var obs3 = Rx.Observable.interval(2000).take(1);
@@ -190,7 +190,7 @@ example.subscribe({
 
 用 Marble diagram 表示如下
 
-```
+```javascript
 source : (o1                 o2      o3)|
            \                  \       \
             --0--1--2--3--4|   -0-1|   ----0|
@@ -217,7 +217,7 @@ example: --0--1--2--3--4-0-1----0|
 
 第二步我们要先取得各个 DOM 事件，元件(#drag) 跟 body。
 
-```
+```javascript
 const dragDOM = document.getElementById('drag');
 const body = document.body;
 
@@ -231,7 +231,7 @@ const body = document.body;
 *   对 body 监听 mouseup
 *   对 body 监听 mousemove
 
-```
+```javascript
 const mouseDown = Rx.Observable.fromEvent(dragDOM, 'mousedown');
 const mouseUp = Rx.Observable.fromEvent(body, 'mouseup');
 const mouseMove = Rx.Observable.fromEvent(body, 'mousemove');
@@ -248,7 +248,7 @@ const mouseMove = Rx.Observable.fromEvent(body, 'mousemove');
 
 **当 mouseDown 时，转成 mouseMove 的事件**
 
-```
+```javascript
 const source = mouseDown.map(event => mouseMove)
 
 ```
@@ -257,7 +257,7 @@ const source = mouseDown.map(event => mouseMove)
 
 加上 `takeUntil(mouseUp)`
 
-```
+```javascript
 const source = mouseDown
                .map(event => mouseMove.takeUntil(mouseUp))
 
@@ -265,7 +265,7 @@ const source = mouseDown
 
 这时 source 大概长像这样
 
-```
+```javascript
 source: -------e--------------e-----
                 \              \
                   --m-m-m-m|     -m--m-m--m-m|
@@ -280,7 +280,7 @@ source: -------e--------------e-----
 
 用 `concatAll()` 摊平 source 成一维。
 
-```
+```javascript
 const source = mouseDown
                .map(event => mouseMove.takeUntil(mouseUp))
                .concatAll();                 
@@ -289,7 +289,7 @@ const source = mouseDown
 
 用 map 把 mousemove event 转成 x,y 的位置，并且订阅。
 
-```
+```javascript
 source
 .map(m => {
     return {
@@ -306,7 +306,7 @@ source
 
 到这里我们就已经完成了简易的拖拽功能了!完整的代码如下
 
-```
+```javascript
 const dragDOM = document.getElementById('drag');
 const body = document.body;
 

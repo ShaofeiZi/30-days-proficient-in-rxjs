@@ -62,7 +62,7 @@ example.subscribe({
 
 画成 Marble Diagram
 
-```
+```javascript
 source : ----h----e----l----l----o|
     scan((origin, next) => origin + next, '')
 example: ----h----(he)----(hel)----(hell)----(hello)|

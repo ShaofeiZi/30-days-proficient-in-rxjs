@@ -49,7 +49,7 @@ Observer 是这三个当中一定会用到却是最简单的，所以我们今�
 
 建立 Observable 的方法有非常多种，其中 `create` 是最基本的方法。`create` 方法在 `Rx.Observable` 事件中，要传入一个 callback function ，这个 callback function 会接收一个 observer 参数，如下
 
-```
+```javascript
 var observable = Rx.Observable
 	.create(function(observer) {
 		observer.next('Jerry'); // RxJS 4.x 以前的版本用 onNext
@@ -68,7 +68,7 @@ var observable = Rx.Observable
 
 我们可以订阅这个 observable，来接收他发送的值，代码如下
 
-```
+```javascript
 var observable = Rx.Observable
 	.create(function(observer) {
 		observer.next('Jerry'); // RxJS 4.x 以前的版本用 onNext
@@ -96,7 +96,7 @@ observable.subscribe(function(value) {
 
 证明如下
 
-```
+```javascript
 var observable = Rx.Observable
 	.create(function(observer) {
 		observer.next('Jerry'); // RxJS 4.x 以前的版本用 onNext
@@ -115,7 +115,7 @@ console.log('end');
 
 上面这段代码会印出
 
-```
+```javascript
 start
 Jerry
 Anna
@@ -125,7 +125,7 @@ end
 
 而不是
 
-```
+```javascript
 start
 end
 Jerry
@@ -135,7 +135,7 @@ Anna
 
 所以很明显的这段代码是同步执行的，当然我们可以拿它来处理非同步的行为！
 
-```
+```javascript
 var observable = Rx.Observable
 	.create(function(observer) {
 		observer.next('Jerry'); // RxJS 4.x 以前的版本用 onNext
@@ -158,7 +158,7 @@ console.log('end');
 
 这时就会印出
 
-```
+```javascript
 start
 Jerry
 Anna
@@ -191,7 +191,7 @@ Observable 可以被订阅(subscribe)，或说可以被观察，而订阅 Observ
 
 说了这么多，我们还是直接来建立一个观察者吧！
 
-```
+```javascript
 var observable = Rx.Observable
 	.create(function(observer) {
 			observer.next('Jerry');
@@ -222,7 +222,7 @@ observable.subscribe(observer)
 
 上面这段代码会印出
 
-```
+```javascript
 Jerry
 Anna
 complete
@@ -233,7 +233,7 @@ complete
 
 下面则是发送错误的示例
 
-```
+```javascript
 var observable = Rx.Observable
   .create(function(observer) {
     try {
@@ -269,7 +269,7 @@ observable.subscribe(observer)
 
 另外观察者可以是不完整的，他可以只具有一个 next 方法，如下
 
-```
+```javascript
 var observer = {
 	next: function(value) {
 		//...
@@ -286,7 +286,7 @@ var observer = {
 
 我们也可以直接把 next, error, complete 三个 function 依序传入 `observable.subscribe`，如下：
 
-```
+```javascript
 observable.subscribe(
     value => { console.log(value); },
     error => { console.log('Error: ', error); },
@@ -303,7 +303,7 @@ observable.subscribe(
 
 addEventListener 本质上就是 Observer Pattern 的实例，在内部会有一份订阅清单，像是我们昨天实例的 Producer
 
-```
+```javascript
 class Producer {
 	constructor() {
 		this.listeners = [];
@@ -333,7 +333,7 @@ class Producer {
 
 我们以下面的代码做说明
 
-```
+```javascript
 var observable = Rx.Observable
 	.create(function (observer) {
 			observer.next('Jerry');
@@ -356,7 +356,7 @@ observable.subscribe({
 
 像上面这段程式，他的行为比较像这样
 
-```
+```javascript
 
 function subscribe(observer) {
 		observer.next('Jerry');
